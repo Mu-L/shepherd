@@ -10,17 +10,17 @@
 
   let {
     classPrefix,
-    element = $bindable(),
     descriptionId,
-    firstFocusableElement,
-    focusableElements,
     labelId,
-    lastFocusableElement,
-    step,
-    dataStepId
+    step
   } = $props();
 
-  let classes;
+  let classes = $state();
+  let dataStepId = $state();
+  let element = $state();
+  let firstFocusableElement = $state();
+  let focusableElements = $state();
+  let lastFocusableElement = $state();
 
   const hasCancelIcon = $derived(step.options?.cancelIcon?.enabled ?? false);
   const hasTitle = $derived(step.options?.title ?? false);
